@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <%- include ('./partials/head.ejs') %>
+
+  </head>
+<body>
+  <%- include ('./partials/navbar.ejs') %>
+  <script>
+    var element = document.getElementById("about-nav");
+    element.classList.add("active");
+  </script>
+
+      <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0">EVENT<span>APP</span></h1>
+      <p class="mb-4 pb-0">Events made easier for you.</p>
+      <i class="fa fa-flash fa-4x" style="color: red;"></i>
+      <a style="text-decoration: none;" class="about-btn scrollto">About Us</a>
+    </div>
+  </section><!-- End Intro Section -->
+
+  <main id="main">
+
+    <!-- ======= About:Speaker Section ======= -->
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <!-- <h2>About Us</h2>
+          <p>Here is some information about us</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-6" style="padding: 10px;">
+            <img src="assets/img/gallery/7.jpg" alt="" width="100%">
+          </div>
+          <div class="col-md-6">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate optio ipsam tenetur. Veritatis ut ab ullam facilis natus laboriosam assumenda, dolorem reprehenderit iusto dolore eveniet iste cupiditate. Blanditiis, reiciendis tempore?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate optio ipsam tenetur. Veritatis ut ab ullam facilis natus laboriosam assumenda, dolorem reprehenderit iusto dolore eveniet iste cupiditate. Blanditiis, reiciendis tempore?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate optio ipsam tenetur. Veritatis ut ab ullam facilis natus laboriosam assumenda, dolorem reprehenderit iusto dolore eveniet iste cupiditate. Blanditiis, reiciendis tempore?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate optio ipsam tenetur. Veritatis ut ab ullam facilis natus laboriosam assumenda, dolorem reprehenderit iusto dolore eveniet iste cupiditate. Blanditiis, reiciendis tempore?
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- End Speakers Section -->
+
+    <!--  Modal -->
+    <%- include ( './partials/authModals.ejs' )%>
+    <!-- End  Modal -->
+
+  <!-- ======= Footer ======= -->
+  <%- include ('./partials/footer.ejs') %>
+
+  </main><!-- End #main -->
+</body>
+</html>

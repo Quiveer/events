@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+
+  </head>
+<body>
+    <%- include ('./partials/navbar.ejs') %>
+
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+        <div class="breadcrumb">
+            <div class="container-fluid">
+                <a href="/" >Home</a>
+                <span class="txt29 m-l-10 m-r-10">/</span>
+                <a href="../blog">Blogs</a>
+                <span class="txt29 m-l-10 m-r-10">/</span>
+                <span><%= blog.title %></span>
+            </div>
+        </div>
+
+        <div class="container-fluid" data-aos="fade-up">
+  
+        <div class="row">
+            <div class="col-md-9 border-right border-top" style="padding: 50px;">
+
+                <div class="blog blogs">
+                  <div class="blog-img">
+                    <img src="/uploads/blogs/<%= blog.filename %>" width="100%" height="368px">
+                  </div>
+                  <h4 style="text-transform: uppercase;"><%= blog.title %></h4>
+                  <span style="color: rgb(119, 117, 117);font-size: small;"><b>by <%= blog.author %> | <%= blog.date.toDateString() %> | <%= blog.category %> | 0 comments </b></span>
+                  <p style="padding-top: 10px;">
+                    <%= blog.content %>
+                  </p>
+                </div>
+
+            </div>
+            <div class="col-md-3 border-top" style="padding: 20px;">
+                <div class="navbar navbar-dark bg-dark">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-8"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
+                            <div class="col-sm-4"><input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"></div>
+                        </div>
+                      </form>
+                  </div>
+                  <!-- Category -->
+                <div>
+                    <h3 class="text-uppercase" style="text-align: center;">Categories</h3>
+                    <hr style="height: 2px; background-color: #060c22;">
+                </div>
+                <div class="list-group">
+                  <a href="" class="list-group-item list-group-item-action">Hotels & Restaurants</a>
+                  <a href="" class="list-group-item list-group-item-action">Clubs</a>
+                  <a href="" class="list-group-item list-group-item-action">Outdoor events</a>
+                  <a href="" class="list-group-item list-group-item-action">Churches</a>
+                  <a href="" class="list-group-item list-group-item-action">DJs</a>
+                  <a href="" class="list-group-item list-group-item-action">Artists</a>
+                  <a href="" class="list-group-item list-group-item-action">Conference</a>
+                </div>
+                <!-- Most Popular -->
+                <div>
+                  <h3 class="text-uppercase" style="text-align: center;">Most Popular</h3>
+                  <hr style="height: 2px; background-color: #060c22;">
+                </div>
+                <div class="row popular">
+                  <div class="col-lg-3 col-md-6"><img src="/assets/img/gallery/1.jpg"  width="70px" height="70px"></div>
+                  <div class="col-lg-9 col-md-6">
+                    <h6>Best Places for Wine</h6>
+                    <span><b>3 days ago </b></span>
+                  </div>
+                </div>
+                <div class="row popular">
+                  <div class="col-lg-3 col-md-6"><img src="/assets/img/gallery/1.jpg"  width="70px" height="70px"></div>
+                  <div class="col-lg-9 col-md-6">
+                    <h6>Best Places for Wine</h6>
+                    <span><b>3 days ago </b></span>
+                  </div>
+                </div>
+                <!-- Archive -->
+                <div>
+                  <h3 class="text-uppercase" style="text-align: center;">Archive</h3>
+                  <hr style="height: 2px; background-color: #060c22;">
+                </div>
+                <div class="list-group archive">
+                  <a href="" class="list-group-item list-group-item-action">April 2020 <span>(3)</span></a>
+                  <a href="" class="list-group-item list-group-item-action">March 2020 <span>(3)</span></a>
+                  <a href="" class="list-group-item list-group-item-action">Feb 2020 <span>(3)</span></a>
+                  <a href="" class="list-group-item list-group-item-action">Jan 2020 <span>(3)</span></a>
+                  <a href="" class="list-group-item list-group-item-action">Dec 2019 <span>(3)</span></a>
+                  <a href="" class="list-group-item list-group-item-action">Nov 2019 <span>(3)</span></a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+  
+      </section>
+      <!-- End Hotels Section -->
+
+    <!--  Modal -->
+    <%- include ( './partials/authModals.ejs' )%>
+    <!-- End  Modal -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ('./partials/footer.ejs') %>
+
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/jquery.1.8.3.min.js"></script>
+    <script src="/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <!-- End  Footer -->
+
+  </main><!-- End #main -->
+</body>
+</html>

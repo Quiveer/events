@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include ( './partials/head.ejs' )%>
+
+  </head>
+<body>
+  <%- include ( './partials/navbar.ejs' )%>
+  <script>
+    var element = document.getElementById("dashboard-nav");
+    element.classList.add("active");
+  </script>
+  
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+      <div class="breadcrumb">
+          <div class="container-fluid">
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <span>Dashboard</span>
+          </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-9 border-right border-top" style="padding: 50px; display: inline-flex;">
+            
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Events</h5>
+                    <p class="card-text"> <%= events.length %> </p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Blogs</h5>
+                    <p class="card-text"> <%= events.length %> </p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card">
+                  <a href="add-event">
+                    <div class="card-body">
+                      <h5 class="card-title">Add Event</h5>
+                      <p class="card-text"> <i class="fa fa-plus"></i></p>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card">
+                  <a href="manage-events">
+                    <div class="card-body">
+                      <h5 class="card-title">Manage Events</h5>
+                      <p class="card-text"> <i class="fa fa-gear"></i></p>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3 border-top" style="padding: 20px;">
+              <div class="list-group">
+                <a href="dashboard" class="list-group-item list-group-item-action active">Dashboard</a>
+                <a href="add-event" class="list-group-item list-group-item-action">Add Event</a>
+                <a href="manage-events" class="list-group-item list-group-item-action">Manage Event</a>
+                <a href="blog" class="list-group-item list-group-item-action">Blogs</a>
+                <a href="notifications" class="list-group-item list-group-item-action">Notifications</a>
+                <a href="/logout" class="list-group-item list-group-item-action">Log Out</a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+    <!-- End Hotels Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ( './partials/footer.ejs' )%>
+
+  </main>
+  <!-- End #main -->
+    
+</body>
+</html>

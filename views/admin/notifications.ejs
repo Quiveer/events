@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include ( './partials/head.ejs' )%>
+
+  </head>
+<body>
+  <%- include ( './partials/navbar.ejs' )%>
+  <script>
+    var element = document.getElementById("notification-nav");
+    element.classList.add("active");
+  </script>
+  
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+      <div class="breadcrumb">
+          <div class="container-fluid">
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <a href="dashboard" >Dashboard</a>
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <span>Notifications</span>
+          </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-md-9 border-right border-top" style="padding: 20px ;">
+                <div class="container" style="background-color: rgb(209, 205, 205);padding: 10px;">
+                    <h6><b>Billing changes</b></h6>
+                    <small>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ea architecto perspiciatis veniam quam amet totam laborum quasi.<br>
+                        <div style="text-align: right;"><i>5 minutes ago</i></div>
+                    </small>
+                </div> 
+                <br>
+                <div class="container border" style="background-color: rgb(240, 240, 243);border-radius: 5px;padding: 10px;">
+                    <h6><b>Upload changes</b></h6>
+                    <small>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ea architecto perspiciatis veniam quam amet totam laborum quasi.<br>
+                        <div style="text-align: right;"><i>Dec 22, 2020, 21:00 </i></div>
+                    </small>
+                </div>
+            </div>
+            <div class="col-md-3 border-top" style="padding: 20px;">
+                <div class="list-group">
+                    <a href="dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="add-event" class="list-group-item list-group-item-action">Add Event</a>
+                    <a href="manage-events" class="list-group-item list-group-item-action">Manage Event</a>
+                    <a href="blog" class="list-group-item list-group-item-action">Blogs</a>
+                    <a href="notifications" class="list-group-item list-group-item-action active">Notifications</a>
+                    <a href="/logout" class="list-group-item list-group-item-action">Log Out</a>
+                </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+    <!-- End Hotels Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ( './partials/footer.ejs' )%>
+  <!-- End  Footer -->
+
+  </main>
+  <!-- End #main -->
+    
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include ( './partials/head.ejs' )%>
+    <script>
+      $(document).ready(function() {
+        $('#myCheck').change(function() {
+          if(this.checked) {
+            $('#text').fadeIn('slow').css('display', 'block');
+          } else {
+            $('#text').fadeOut('slow').css('display', 'none');
+          }
+        })
+      })
+    </script>
+
+  </head>
+<body>
+  <%- include ( './partials/navbar.ejs' )%>
+  
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+      <div class="breadcrumb">
+          <div class="container-fluid">
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <a href="dashboard" >Dashboard</a>
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <span>Add Event</span>
+          </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-9 border-right border-top" style="padding: 50px; display: inline-flex;">
+            
+            <div class="container">
+
+              <div style="text-align: center;"><h4>ADD NEW EVENT</h4></div> <br>
+
+              <form action="/uploadevent" enctype="multipart/form-data" method="post">
+                <div class="form-group row">
+                  <label for="image"  class="col-sm-2 col-form-label">Upload Image</label>
+                  <div class="col-sm-10">
+                    <input type="file" name="myEvent" accept="image/*" class="form-control-file" id="image">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="title" class="col-sm-2 col-form-label">Title</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="category" class="col-sm-2 col-form-label">Category</label>
+                  <div class="col-sm-10">
+                    <select type="text" name="category" class="form-control" id="title">
+                      <option value="">Choose...</option>
+                      <option value="hotel">Hotels & Restaurants</option>
+                      <option value="club">Clubs</option>
+                      <option value="outdoor">Outdoor Events</option>
+                      <option value="church">Churches</option>
+                      <option value="dj">DJs</option>
+                      <option value="artist">Artists</option>
+                      <option value="conference">Conference</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="venue" class="col-sm-2 col-form-label">Venue</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="venue" id="venue" placeholder="Venue">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="date" class="col-sm-2 col-form-label">Date</label>
+                  <div class="col-sm-10">
+                    <input type="date" name="eventDate" class="form-control" id="date">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="time" class="col-sm-2 col-form-label">Time</label>
+                  <div class="col-sm-10">
+                    <input type="time" name="time" class="form-control" id="time">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="description" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-10">
+                    <textarea type="text" name="description"  class="form-control" id="description" placeholder="Write something about it.."></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="ticket" class="col-sm-2 col-form-label">Ticket</label>
+                  <div class="col-sm-1" style="float: left;">
+                    <input type="checkbox" class="form-control" id="myCheck">
+                  </div>
+                  <div class="col-sm-8">
+                    <div id="text" style="display: none;">
+
+                      <div class="form-group row">
+                        <label for="VIP" class="col-sm-2 col-form-label">VIP</label>
+                        <div class="col-sm-10">
+                          <input type="number" name="vip" class="form-control" id="VIPfee" placeholder="Enter VIP Fee">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="regular" class="col-sm-2 col-form-label">Regular</label>
+                        <div class="col-sm-10">
+                          <input type="number" name="regular" class="form-control" id="regularfee" placeholder="Enter regular's Fee">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" style="float: right;">
+                    <input type="submit" class="btn btn-success btn-block" id="title" value="Add Event">
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+          <div class="col-md-3 border-top" style="padding: 20px;">
+              <div class="list-group">
+                <a href="dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="add-event" class="list-group-item list-group-item-action active">Add Event</a>
+                <a href="manage-events" class="list-group-item list-group-item-action">Manage Event</a>
+                <a href="blog" class="list-group-item list-group-item-action">Blogs</a>
+                <a href="notifications" class="list-group-item list-group-item-action">Notifications</a>
+                <a href="/logout" class="list-group-item list-group-item-action">Log Out</a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+    <!-- End Hotels Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ( './partials/footer.ejs' )%>
+  <!-- End  Footer -->
+
+  </main>
+  <!-- End #main -->
+    
+</body>
+</html>

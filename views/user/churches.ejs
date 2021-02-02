@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <%- include ('./partials/head.ejs') %>
+
+  </head>
+<body>
+    <%- include ('./partials/navbar.ejs') %>
+
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="hotels" class="section-with-bg">
+        <div class="breadcrumb">
+            <div class="container-fluid">
+                <a href="/" >Home</a>
+                <span class="txt29 m-l-10 m-r-10">/</span>
+                <a href="events" >Events</a>
+                <span class="txt29 m-l-10 m-r-10">/</span>
+                <span>Churches</span>
+            </div>
+        </div>
+
+        <div class="container-fluid" data-aos="fade-up">
+  
+        <div class="row">
+            <div class="col-md-9 border-right border-top" style="padding: 20px;">
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="hotel">
+                        <div class="hotel-img">
+                            <img src="assets/img/gallery/1.jpg" class="img-fluid">
+                            <div class="topright text-monospace" style="background-color: green; color: white;">New</div>
+                            <div class="bottomright text-monospace" style="background-color: #060c22; color: white;"><small>Outdoor Event</small></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="hotel">
+                        <div class="hotel-img">
+                          <img src="assets/img/gallery/2.jpg" class="img-fluid">
+                          <div class="topright text-monospace" style="background-color: green; color: white;">New</div>
+                          <div class="bottomright text-monospace" style="background-color: #060c22; color: white;"><small>Church</small></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <div class="hotel">
+                        <div class="hotel-img">
+                          <img src="assets/img/gallery/3.jpg" class="img-fluid">
+                          <div class="topright text-monospace" style="background-color: green; color: white;">New</div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-top" style="padding: 20px;">
+                <div class="navbar navbar-dark bg-dark">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-8"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
+                            <div class="col-sm-4"><input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"></div>
+                        </div>
+                      </form>
+                  </div>
+                <div>
+                    <h3 class="text-uppercase" style="text-align: center;">Categories</h3>
+                    <hr style="height: 2px; background-color: #060c22;">
+                </div>
+                <div class="list-group">
+                  <a href="events" class="list-group-item list-group-item-action">All</a>
+                  <a href="hotels" class="list-group-item list-group-item-action">Hotels & Restaurants</a>
+                  <a href="clubs" class="list-group-item list-group-item-action">Clubs</a>
+                  <a href="outdoor" class="list-group-item list-group-item-action">Outdoor events</a>
+                  <a href="churches" class="list-group-item list-group-item-action active">Churches</a>
+                  <a href="djs" class="list-group-item list-group-item-action">DJs</a>
+                  <a href="artists" class="list-group-item list-group-item-action">Artists</a>
+                  <a href="conference" class="list-group-item list-group-item-action">Conference</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+  
+      </section>
+      <!-- End Hotels Section -->
+
+    <!--  Modal -->
+    <%- include ( './partials/authModals.ejs' )%>
+    <!-- End  Modal -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ('./partials/footer.ejs') %>
+
+  </main><!-- End #main -->
+</body>
+</html>

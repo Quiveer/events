@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include ( './partials/head.ejs' )%>
+
+  </head>
+<body>
+  <%- include ( './partials/navbar.ejs' )%>
+  
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+      <div class="breadcrumb">
+          <div class="container-fluid">
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <a href="dashboard" >Dashboard</a>
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <a href="blog" >Blogs</a>
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <span >Edit Blog</span>
+          </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-9 border-right border-top" style="padding: 20px ; display: inline-flex;">
+            
+            <div class="container">
+
+              <div class="breadcrumb">
+                <div class="container-fluid">
+                  <div style="text-align: center;"><h4>EDIT BLOG</h4></div>
+                </div>
+              </div>
+
+              <form action="/admin/blog/<%= blog._id %>/edit-blog" method="POST" style="padding-bottom: 50px;">
+                <div class="row" style="padding-bottom: 10px;">
+                    <div class="col-md-5">
+                        <!-- <div class="form-group"> -->
+                            <img src="/uploads/blogs/<%= blog.filename %>" alt="" width="300px" height="200px" style="border-radius: 10px;">
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-2 col-form-label">Title</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="title" class="form-control" id="title" value="<%= blog.title %>">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="author" class="col-sm-2 col-form-label">Author</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="author" class="form-control" id="author" value="<%= blog.author %>">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea type="text" name="content" rows="5" class="form-control" id="content"><%= blog.content %></textarea>
+                </div>
+                <div class="form-group" style="text-align: right;">
+                    <input type="submit" class="btn btn-success" value="Edit Blog">
+                </div>
+
+                <hr>
+
+              </form>
+
+            </div>
+
+          </div>
+          <div class="col-md-3 border-top" style="padding: 20px;">
+              <div class="list-group">
+                <a href="dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="add-event" class="list-group-item list-group-item-action">Add Event</a>
+                <a href="manage-events" class="list-group-item list-group-item-action">Manage Event</a>
+                <a href="blog" class="list-group-item list-group-item-action active">Blogs</a>
+                <a href="notification" class="list-group-item list-group-item-action">Notifications</a>
+                <a href="/logout" class="list-group-item list-group-item-action">Log Out</a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+    <!-- End Hotels Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ( './partials/footer.ejs' )%>
+  <!-- End  Footer -->
+
+  </main>
+  <!-- End #main -->
+    
+</body>
+</html>

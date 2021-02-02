@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include ( './partials/head.ejs' )%>
+
+  </head>
+<body>
+  <%- include ( './partials/navbar.ejs' )%>
+  
+  <main id="main">
+    <!-- ======= Hotels Section ======= -->
+    <section id="blog" class="section-with-bg">
+      <div class="breadcrumb">
+          <div class="container-fluid">
+            <i class="fa fa-angle-right fa-lg"></i>&nbsp;
+            <a href="dashboard" >Dashboard</a>
+              <span class="txt29 m-l-10 m-r-10"><i class="fa fa-angle-right fa-lg"></i>&nbsp;</span>
+              <span>Manage Events</span>
+          </div>
+      </div>
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-9 border-right border-top" style="padding: 50px; display: inline-flex;">
+            
+            <div class="row">
+              <!-- ------------ -->
+              <% allEvents.forEach(function(event) { %>
+              <div class="col-lg-4 col-md-6">
+                <div class="card"  data-id="<%= event._id %>">
+                  <img class="card-img-top" src="/uploads/events/<%= event.filename %>" alt="Card image cap">
+                  <!-- <div class="card-body"> -->
+                    
+                    <h5 class="card-title"><%= event.title %></h5>
+                    <p><%= event.description.substr(0, 50) %>...</p>
+
+                    <a href="#" type="button" class="view btn btn-info">View</a>
+                    <a href="/admin/events/<%= event._id %>" class="btn btn-secondary">Edit</a>
+                    <a href="/<%= event._id %>/deleteEvent" class="btn btn-danger" style="float: right;">Delete</a>
+                  <!-- </div> -->
+                </div>
+              </div>
+              <% }); %>
+              <!-- ------------ -->
+              
+
+
+            </div>
+
+          </div>
+          <div class="col-md-3 border-top" style="padding: 20px;">
+              <div class="list-group">
+                <a href="dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="add-event" class="list-group-item list-group-item-action">Add Event</a>
+                <a href="manage-events" class="list-group-item list-group-item-action active">Manage Events</a>
+                <a href="blog" class="list-group-item list-group-item-action">Blogs</a>
+                <a href="notifications" class="list-group-item list-group-item-action">Notifications</a>
+                <a href="/logout" class="list-group-item list-group-item-action">Log Out</a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+    <!-- End Hotels Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include ( './partials/footer.ejs' )%>
+  <!-- End  Footer -->
+
+  <!-- view Event Image Modal -->
+  <div class="modal fade" id="viewEvent" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <h5 class="modal-title"  id="title"></h5>
+          <img id="img" src="" alt="" width="100%">
+
+          <p id="description"></p>
+          <span id="eventDate"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End Event Content Modal -->
+
+  </main>
+  <!-- End #main -->
+
+  <script>
+    $('a.view').click(function (e) {
+      e.preventDefault();
+      var tr = $(this).closest('div'),
+        modal = $('#viewEvent');
+      
+        $.getJSON('/admin/events/' + tr.data('id') + '/view', function(data) {
+          modal.find('img').attr('src', `/uploads/events/${data.filename}` );
+          modal.find('[id=img]').html( data.filename );
+          modal.find('[id=title]').html( data.title );
+          modal.find('[id=description]').html( data.description );
+          modal.find('[id=eventDate]').html( data.eventDate );
+
+          modal.modal('show');
+        });
+    });
+  </script>
+    
+</body>
+</html>
