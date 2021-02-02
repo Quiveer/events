@@ -27,7 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js"
+    "start": "npm start"
   },
   "keywords": [],
   "author": "Sam",
